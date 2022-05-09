@@ -95,7 +95,8 @@ document.addEventListener('keydown', (event) => {
   buttons[event.code].click();
   if (event.code === 'ControlLeft' || event.metaKey) {
     changeLanguage.add(event.code);
-    setTimeout(changeLanguage.clear(), 100);
+    // eslint-disable-next-line no-implied-eval
+    setTimeout('changeLanguage.clear()', 100);
     if (changeLanguage.size === 2) {
       if (!rus) { russianLanguage(); } else { englishLanguage(); }
       changeLanguage.clear();
