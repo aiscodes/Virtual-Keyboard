@@ -104,6 +104,16 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+document.addEventListener('keydown', (event) => {
+  key = true;
+  buttons[event.code].click();
+  if (event.code === 'Tab') {
+    event.preventDefault();
+    input.focus();
+    input.value += '     ';
+  }
+});
+
 function backColor(a) {
   const b = a;
   b.style = 'color: white; background-color: black;';
@@ -146,15 +156,6 @@ function metaKeysEvents() {
         break;
       }
       input.value += ' ';
-      break;
-    case 'Tab':
-      this.style = 'color: black; background-color: white;';
-      setTimeout(backColor, 100, elem);
-      input.focus();
-      if (key) {
-        break;
-      }
-      input.value += '   ';
       break;
     case 'caps lock':
       if (!flag) {
