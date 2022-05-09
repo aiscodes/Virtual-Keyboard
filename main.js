@@ -109,6 +109,11 @@ function backColor(a) {
   b.style = 'color: white; background-color: black;';
 }
 
+function backColorSpace(a) {
+  const b = a;
+  b.style = 'color: black; background-color: black;';
+}
+
 function metaKeysEvents() {
   const elem = this;
   switch (this.innerHTML) {
@@ -134,8 +139,8 @@ function metaKeysEvents() {
       input.value = input.value.slice(0, -1);
       break;
     case 'Space':
-      this.style = 'color: black; background-color: white;';
-      setTimeout(backColor, 100, elem);
+      this.style = 'color: white; background-color: white;';
+      setTimeout(backColorSpace, 100, elem);
       input.focus();
       if (key) {
         break;
