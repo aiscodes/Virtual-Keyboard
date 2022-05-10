@@ -114,6 +114,16 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+document.addEventListener('keydown', (event) => {
+  key = true;
+  buttons[event.code].click();
+  if (event.code === 'CapsLock') {
+    event.preventDefault();
+    input.focus();
+    input.value += '     ';
+  }
+});
+
 function backColor(a) {
   const b = a;
   b.style = 'color: white; background-color: black;';
